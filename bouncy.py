@@ -289,8 +289,8 @@ class bouncy():
                     
                 with open(homepath+"config", "a") as temp:
                     
-                    temp.write("Host "+user+"\r"+"HostName "+"\r"+host_IP+"\r"+"User "+user+"\r"+"Port "+c_port+"\r"+"IdentityFile "+cert+"\r"+"ProxyJump "+previous_user+"\r\n\n")
-                
+                    temp.write("Host "+user+"\r"+"HostName "+host_IP+"\r"+"User "+user+"\r"+"Port "+c_port+"\r"+"IdentityFile "+cert+"\r"+"ProxyJump "+previous_user+"\r\n\n")
+                    
                 with open("ufile.tmp", "w") as ufl:
                    
                    ufl.write(user)
