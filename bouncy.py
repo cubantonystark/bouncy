@@ -287,9 +287,15 @@ class bouncy():
                     
                     previous_user = ufile.read().strip()
                     
-                with open(homepath+"config", "a") as temp:
+                with open(homepath+"config", "a") as cfg:
                     
-                    temp.write("Host "+user+"\r"+"HostName "+host_IP+"\r"+"User "+user+"\r"+"Port "+c_port+"\r"+"IdentityFile "+cert+"\r"+"ProxyJump "+previous_user+"\r\n\n")
+                    cfg.write("Host "+user+"\n")
+                    cfg.write("HostName "+host_IP+"\n")
+                    cfg.write("User "+user+"\n")
+                    cfg.write("Port "+c_port+"\n")
+                    cfg.write("IdentityFile "+cert+"\n")
+                    cfg.write("ProxyJump "+previous_user+"\n")
+                    cfg.write("\n")
                     
                 with open("ufile.tmp", "w") as ufl:
                    
@@ -356,9 +362,14 @@ class bouncy():
             user = user_entry.get()
             cert = cert_entry.get()
             
-            with open(homepath+"config", "w") as temp:
+            with open(homepath+"config", "w") as cfg:
                 
-                temp.write("Host "+user+"\r"+"HostName "+host_IP+"\r"+"User "+user+"\r"+"Port "+c_port+"\r"+"IdentityFile "+cert+"\r\n\n")
+                cfg.write("Host "+user+"\n")
+                cfg.write("HostName "+host_IP+"\n")
+                cfg.write("User "+user+"\n")
+                cfg.write("Port "+c_port+"\n")
+                cfg.write("IdentityFile "+cert+"\n")
+                cfg.write("\n")
                 
             wizard_screen.destroy()
             
